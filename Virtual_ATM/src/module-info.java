@@ -6,4 +6,5 @@
  *
  */
 module Virtual_ATM {
+	requires java.desktop;
 }
