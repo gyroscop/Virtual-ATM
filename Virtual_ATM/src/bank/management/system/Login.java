@@ -24,7 +24,7 @@ public class Login extends JFrame implements ActionListener{
 		ImageIcon i3 = new ImageIcon(i2);
 		JLabel label = new JLabel(i3);
 		label.setBounds(70, 10, 100,100);
-		setLayout(null);///to abort default layout and set custom layout.  
+		setLayout(null);/// To override default layout so that new positions of objects can be defined
 		add(label);
 		
 		//add Welcome msg
