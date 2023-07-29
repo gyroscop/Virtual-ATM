@@ -1,14 +1,17 @@
 package bank.management.system;
-
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Image;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.Random;
 
 import javax.swing.*;
 
+import com.toedter.calendar.JDateChooser;
+//import com.toedter.calendar.*;
 
-public class SignUpOne extends JFrame{
+public class SignUpOne extends JFrame implements ActionListener{
 	
 	JTextField nameTextField,fathernameTextField,emailTextField,addTextField,cityTextField,pincodeTextField,stateTextField;
 	
@@ -67,10 +70,39 @@ public class SignUpOne extends JFrame{
 		 	dob.setFont(new Font("Raleway", Font.BOLD, 18));
 		 	add(dob);
 		 	
+		 	JDateChooser dateChooser = new JDateChooser();
+		 	dateChooser.setBounds(350, 250, 400, 30);
+		 	dateChooser.setForeground( new Color(150,150,150));
+		 	add(dateChooser);
+		 	
 		 	JLabel gender = new JLabel("Gender :"); 
 		 	gender.setBounds(130, 300, 200, 30);
 		 	gender.setFont(new Font("Raleway", Font.BOLD, 18));
 		 	add(gender);
+		 	
+		 	JRadioButton male = new JRadioButton("Male");
+		 	male.setBounds(350, 300, 80, 30);
+		 	male.setBackground(Color.WHITE);
+		 	add(male);
+		 	
+		 	JRadioButton female = new JRadioButton("Female");
+		 	female.setBounds(450, 300, 80, 30);
+		 	female.setBackground(Color.WHITE);
+		 	add(female);
+		 	
+		 	JRadioButton transgender = new JRadioButton("Transgender");
+		 	transgender.setBounds(550, 300, 120, 30);
+		 	transgender.setBackground(Color.WHITE);
+		 	add(transgender);
+		 	
+		 	ButtonGroup genderGroup = new ButtonGroup();
+		 	
+		 	genderGroup.add(male);
+		 	genderGroup.add(female);
+		 	genderGroup.add(transgender);
+		 	
+		 	
+
 		 	
 		 	JLabel email = new JLabel("Email Address :"); 
 		 	email.setBounds(130, 350, 200, 30);
@@ -86,6 +118,22 @@ public class SignUpOne extends JFrame{
 		 	marriage.setBounds(130, 400, 200, 30);
 		 	marriage.setFont(new Font("Raleway", Font.BOLD, 18));
 		 	add(marriage);
+		 	
+		 	JRadioButton married = new JRadioButton("Married");
+		 	married.setBounds(350, 400, 80, 30);
+		 	married.setBackground(Color.WHITE);
+		 	add(married);
+		 	
+		 	JRadioButton single = new JRadioButton("Single");
+		 	single.setBounds(450, 400, 80, 30);
+		 	single.setBackground(Color.WHITE);
+		 	add(single);
+		 
+		 	ButtonGroup marritialGroup = new ButtonGroup();
+		 	
+		 	marritialGroup.add(married);
+		 	marritialGroup.add(single);
+		 	
 		 	
 		 	JLabel address = new JLabel("Address:"); 
 		 	address.setBounds(130, 450, 200, 30);
@@ -127,10 +175,17 @@ public class SignUpOne extends JFrame{
 		 	stateTextField.setFont(new Font("Arial", Font.BOLD,14));
 		 	add(stateTextField);
 		 	
+		 	JButton next = new JButton("Next");
+		 	next.setBounds(670, 700, 80, 30) ;
+		 	next.setForeground(Color.WHITE);
+		 	next.setBackground(Color.BLACK);
+		 	next.setFont(new Font("Raleway", Font.BOLD, 14));
+		 	next.addActionListener(this);
+			add(next);
 		 	
 			setSize(850,800);
 			setVisible(true);
-			setLocation(550,150);
+			setLocation(300,10);
 			setTitle("SignUp Page One");
 			getContentPane().setBackground(Color.WHITE);
 		
@@ -139,6 +194,12 @@ public class SignUpOne extends JFrame{
 	public static void main(String[] args) {
 		
 		new SignUpOne();
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
+		
 	}
 
 	
